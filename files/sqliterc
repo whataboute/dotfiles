@@ -1,0 +1,10 @@
+# stored in ~/.sqliterc
+
+.headers on
+.mode column
+.nullvalue ¤
+.prompt "> "
+.timer on
+.stats on
+.echo on
+

@@ -1,0 +1,63 @@
+" stored in ~/.vimrc
+
+syntax on
+set number
+set tabstop=4
+set softtabstop=4
+set showcmd
+set cursorline
+filetype indent on
+set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
+" persistent undo
+set undofile
+set undodir=$HOME/.vimundo
+
+set undolevels=1000
+set undoreload=10000
+
+set title
+" disabled visualbell
+" set visualbell
+set noerrorbells
+
+" prevents cursor from jumping to start of line on buffer switch for example
+set nostartofline
+
+" save 1000 lines of history
+set history=1000
+
+" read file when changed externally
+set autoread
+
+" allow for wild menu feature
+set wildmenu
+
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" Ignore rails temporary asset caches
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+
+" Ignore build dir
+set wildignore+=build/*,media/*
+
+" Ignore node modules
+set wildignore+=node_modules/*,bower_components/*
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
+
+set wildignore+=types_*taghl,tags
